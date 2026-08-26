@@ -13,6 +13,7 @@
             --text-secondary: #9CA3AF;
             --accent: #3B82F6;
             --whatsapp-green: #25D366;
+            --call-blue: #2563EB;
             --accent-glow: rgba(59, 130, 246, 0.15);
             --border: #1F2937;
             --code-bg: #030508;
@@ -60,7 +61,7 @@
         nav {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 20px;
         }
 
         nav a {
@@ -75,19 +76,32 @@
             color: var(--text-primary);
         }
 
+        .nav-actions {
+            display: flex;
+            gap: 10px;
+        }
+
         .nav-btn {
-            background-color: var(--whatsapp-green);
-            color: white !important;
-            padding: 9px 18px;
+            padding: 8px 14px;
             border-radius: 6px;
             font-weight: 600;
-            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.2);
+            font-size: 0.85rem;
+            text-decoration: none;
+            color: white !important;
             transition: transform 0.2s, background-color 0.2s;
         }
 
+        .nav-btn.whatsapp {
+            background-color: var(--whatsapp-green);
+        }
+
+        .nav-btn.call {
+            background-color: var(--call-blue);
+        }
+
         .nav-btn:hover {
-            background-color: #20ba5a;
             transform: translateY(-1px);
+            opacity: 0.9;
         }
 
         .hero {
@@ -140,7 +154,7 @@
         }
 
         .btn {
-            padding: 15px 30px;
+            padding: 14px 26px;
             border-radius: 8px;
             font-weight: 600;
             font-size: 0.95rem;
@@ -150,11 +164,11 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            color: white;
         }
 
         .btn-whatsapp {
             background-color: var(--whatsapp-green);
-            color: white;
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
         }
 
@@ -163,15 +177,14 @@
             transform: translateY(-2px);
         }
 
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--text-primary);
-            border: 1px solid var(--border);
+        .btn-call {
+            background-color: var(--call-blue);
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
         }
 
-        .btn-secondary:hover {
-            border-color: var(--text-secondary);
-            background-color: rgba(255, 255, 255, 0.02);
+        .btn-call:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
         }
 
         section {
@@ -332,7 +345,7 @@
             header {
                 padding: 15px 5%;
             }
-            nav a:not(.nav-btn) {
+            nav a:not(.nav-actions) {
                 display: none;
             }
             .hero {
@@ -352,7 +365,10 @@
             <a href="#services">Solutions</a>
             <a href="#audit">Fixes</a>
             <a href="#contact">Contact</a>
-            <a href="https://wa.me/17423707792" target="_blank" class="nav-btn">Chat on WhatsApp</a>
+            <div class="nav-actions">
+                <a href="https://wa.me/18052592781" target="_blank" class="nav-btn whatsapp">WhatsApp</a>
+                <a href="tel:+18052592781" class="nav-btn call">Call</a>
+            </div>
         </nav>
     </header>
 
@@ -361,11 +377,14 @@
         <h1>Is Your Website Broken or Not Making Sales? <br><span>We Fix It & Drive Revenue.</span></h1>
         <p>Complete web design and e-commerce solutions for websites that aren't working perfectly. Whether it's a broken checkout system, cart errors, or zero sales, we fix the backend code and optimize your store to convert traffic into real buyers.</p>
         <div class="cta-group">
-            <a href="https://wa.me/17423707792" target="_blank" class="btn btn-whatsapp">
+            <a href="https://wa.me/18052592781" target="_blank" class="btn btn-whatsapp">
                 <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                Chat on WhatsApp (+1 742-370-7792)
+                Chat on WhatsApp (+1 805-259-2781)
             </a>
-            <a href="#audit" class="btn btn-secondary">See How We Fix Sites</a>
+            <a href="tel:+18052592781" class="btn btn-call">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                Call Direct Now
+            </a>
         </div>
     </section>
 
@@ -418,7 +437,7 @@
 
     <section id="contact">
         <h2 class="section-title">Get Your Website Fixed Today</h2>
-        <p class="section-subtitle">Send us a message below or click the WhatsApp button to chat directly about your store.</p>
+        <p class="section-subtitle">Reach out via WhatsApp or Call, or send us a message below.</p>
         <div class="contact-form">
             <form action="mailto:contact@conversionforge.com" method="POST" enctype="text/plain">
                 <div class="form-group">
@@ -439,7 +458,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Conversion Forge. All rights reserved. WhatsApp Line: +1 (742) 370-7792</p>
+        <p>&copy; 2026 Conversion Forge. All rights reserved. Phone & WhatsApp: +1 (805) 259-2781</p>
     </footer>
 
 </body>
