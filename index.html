@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Forge | E-Commerce Expertise & Web Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #07090E;
+            --card-bg: #101726;
+            --text-primary: #F9FAFB;
+            --text-secondary: #9CA3AF;
+            --accent: #3B82F6;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --border: #1F2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(7, 9, 14, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-btn {
+            background-color: var(--accent);
+            color: white !important;
+            padding: 9px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+            box-shadow: 0 4px 14px var(--accent-glow);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .nav-btn:hover {
+            background-color: #2563EB;
+            transform: translateY(-1px);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 120px 20px 90px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-glow);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(59, 130, 246, 0.25);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.75rem, 5vw, 4.25rem);
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.12;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #60A5FA, #3B82F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #2563EB;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-secondary);
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .services {
+            padding: 90px 8%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            letter-spacing: -0.5px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px 35px;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 5%;
+            }
+            nav a:not(.nav-btn) {
+                display: none;
+            }
+            .hero {
+                padding: 70px 15px 50px;
+            }
+            .cta-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Conversion Forge<span>.</span></div>
+        <nav>
+            <a href="#services">Expertise</a>
+            <a href="tel:+17423707792" class="nav-btn">+1 (742) 370-7792</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="badge">E-Commerce & Web Design Expert</div>
+        <h1>Turn Visitors Into Buyers with <span>High-Converting</span> Websites</h1>
+        <p>At Conversion Forge, we craft fast, modern, and high-performance online stores and websites designed to maximize sales and scale your brand.</p>
+        <div class="cta-group">
+            <a href="tel:+17423707792" class="btn btn-primary">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                Call Now: +1 (742) 370-7792
+            </a>
+            <a href="#services" class="btn btn-secondary">Explore Expertise</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="section-title">What We Forge</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>E-Commerce Architecture</h3>
+                <p>Complete online store setups optimized for seamless navigation, frictionless mobile checkout, and high conversion rates.</p>
+            </div>
+            <div class="card">
+                <h3>Custom Web Design</h3>
+                <p>Responsive, lightning-fast digital interfaces custom-coded with HTML, CSS, and JavaScript for standout brand positioning.</p>
+            </div>
+            <div class="card">
+                <h3>Conversion Optimization</h3>
+                <p>Strategic layout adjustments, user journey restructuring, and performance tweaks designed to turn casual traffic into loyal buyers.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2026 Conversion Forge. All rights reserved. Direct Line: +1 (742) 370-7792</p>
+    </footer>
+
+</body>
+</html>
