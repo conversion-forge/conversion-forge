@@ -47,15 +47,50 @@
             z-index: 1000;
         }
 
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-logo {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: white;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            letter-spacing: -1px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
         .logo {
             font-weight: 800;
-            font-size: 1.35rem;
+            font-size: 1.2rem;
             color: var(--text-primary);
             letter-spacing: -0.5px;
+            line-height: 1.1;
         }
 
         .logo span {
             color: var(--accent);
+        }
+
+        .logo-sub {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         nav {
@@ -106,7 +141,7 @@
 
         .hero {
             text-align: center;
-            padding: 120px 20px 90px;
+            padding: 110px 20px 70px;
             max-width: 900px;
             margin: 0 auto;
         }
@@ -187,8 +222,76 @@
             transform: translateY(-2px);
         }
 
+        /* Interactive Diagnostic Section */
+        .diagnostic-container {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 850px;
+            margin: 40px auto 0;
+            text-align: left;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .diagnostic-container h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .diagnostic-container p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .diagnostic-tabs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .diagnostic-tabs { grid-template-columns: 1fr; }
+        }
+
+        .diag-tab {
+            background: var(--bg-color);
+            border: 1px solid var(--border);
+            padding: 12px 16px;
+            border-radius: 8px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .diag-tab.active, .diag-tab:hover {
+            border-color: var(--accent);
+            color: var(--text-primary);
+            background: var(--accent-glow);
+        }
+
+        .diag-result {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .diag-result strong {
+            color: #34D399;
+            display: block;
+            margin-bottom: 5px;
+        }
+
         section {
-            padding: 90px 8%;
+            padding: 80px 8%;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -204,7 +307,7 @@
         .section-subtitle {
             text-align: center;
             color: var(--text-secondary);
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             font-size: 1.05rem;
         }
 
@@ -360,7 +463,13 @@
 <body>
 
     <header>
-        <div class="logo">Conversion Forge<span>.</span></div>
+        <div class="logo-container">
+            <div class="brand-logo">D&S</div>
+            <div class="logo-text">
+                <div class="logo">Conversion Forge<span>.</span></div>
+                <div class="logo-sub">Digital Studio Hub</div>
+            </div>
+        </div>
         <nav>
             <a href="#services">Solutions</a>
             <a href="#audit">Fixes</a>
@@ -375,7 +484,8 @@
     <section class="hero">
         <div class="badge">E-Commerce Solutions & Sales Repair</div>
         <h1>Is Your Website Broken or Not Making Sales? <br><span>We Fix It & Drive Revenue.</span></h1>
-        <p>Complete web design and e-commerce solutions for websites that aren't working perfectly. Whether it's a broken checkout system, cart errors, or zero sales, we fix the backend code and optimize your store to convert traffic into real buyers.</p>
+        <p>Complete web design and e-commerce solutions for stores that aren't working perfectly. Whether it's a broken checkout system, payment errors, or zero sales, we fix the code and optimize your store to convert traffic into real buyers.</p>
+        
         <div class="cta-group">
             <a href="https://wa.me/18052592781" target="_blank" class="btn btn-whatsapp">
                 <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
@@ -386,15 +496,29 @@
                 Call Direct Now
             </a>
         </div>
+
+        <!-- Interactive Diagnostic Widget -->
+        <div class="diagnostic-container">
+            <h3>🔍 Instant Site Issue Selector</h3>
+            <p>Select what your website is currently experiencing to see how we fix it:</p>
+            <div class="diagnostic-tabs">
+                <div class="diag-tab active" onclick="showDiag('checkout', this)">Broken Checkout</div>
+                <div class="diag-tab" onclick="showDiag('sales', this)">Getting No Sales</div>
+                <div class="diag-tab" onclick="showDiag('speed', this)">Slow Loading</div>
+            </div>
+            <div class="diag-result" id="diagBox">
+                <strong>🛠️ The Fix for Broken Checkouts:</strong> We debug payment gateway hooks, remove conflicting scripts, and rebuild clean HTML/JS order forms so customers check out successfully every time.
+            </div>
+        </div>
     </section>
 
     <section id="services">
-        <h2 class="section-title">Complete E-Commerce & Web Solutions</h2>
+        <h2 class="section-title">Complete E-Commerce Solutions</h2>
         <p class="section-subtitle">If your website is struggling with technical issues or low sales, we provide the fix.</p>
         <div class="grid">
             <div class="card">
                 <h3>Broken Checkout & Cart Repair</h3>
-                <p>Diagnose and fix payment gateway errors, frozen buttons, and checkout drop-offs so customers can pay successfully.</p>
+                <p>Diagnose and fix payment gateway errors, frozen buttons, and checkout drop-offs so customers can complete purchases successfully.</p>
             </div>
             <div class="card">
                 <h3>Sales & Conversion Optimization</h3>
@@ -458,8 +582,23 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Conversion Forge. All rights reserved. Phone & WhatsApp: +1 (805) 259-2781</p>
+        <p>&copy; 2026 D&S Conversion Forge. All rights reserved. Phone & WhatsApp: +1 (805) 259-2781</p>
     </footer>
 
+    <script>
+        function showDiag(type, element) {
+            document.querySelectorAll('.diag-tab').forEach(t => t.classList.remove('active'));
+            element.classList.add('active');
+            
+            const box = document.getElementById('diagBox');
+            if(type === 'checkout') {
+                box.innerHTML = '<strong>🛠️ The Fix for Broken Checkouts:</strong> We debug payment gateway hooks, remove conflicting scripts, and rebuild clean HTML/JS order forms so customers check out successfully every time.';
+            } else if(type === 'sales') {
+                box.innerHTML = '<strong>🚀 The Fix for Low Sales:</strong> We overhaul your layout hierarchy, optimize trust elements, and streamline clear call-to-action buttons to convert visitors into buyers.';
+            } else if(type === 'speed') {
+                box.innerHTML = '<strong>⚡ The Fix for Slow Speed:</strong> We strip out bloated dependencies, minimize CSS/JS execution time, and implement high-performance caching to load your store instantly.';
+            }
+        }
+    </script>
 </body>
 </html>
