@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversion Forge | E-Commerce Expertise & Web Design</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Conversion Forge | E-Commerce Expertise & Sales Generation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #07090E;
@@ -14,6 +14,7 @@
             --accent: #3B82F6;
             --accent-glow: rgba(59, 130, 246, 0.15);
             --border: #1F2937;
+            --code-bg: #030508;
         }
 
         * {
@@ -172,7 +173,7 @@
             background-color: rgba(255, 255, 255, 0.02);
         }
 
-        .services {
+        section {
             padding: 90px 8%;
             max-width: 1200px;
             margin: 0 auto;
@@ -182,8 +183,15 @@
             text-align: center;
             font-size: 2.25rem;
             font-weight: 700;
-            margin-bottom: 60px;
+            margin-bottom: 15px;
             letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 50px;
+            font-size: 1.05rem;
         }
 
         .grid {
@@ -217,6 +225,96 @@
             font-size: 0.95rem;
         }
 
+        .code-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .code-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .code-box.bad {
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+
+        .code-box.good {
+            border-color: rgba(16, 185, 129, 0.4);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.05);
+        }
+
+        .code-header {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .code-box.bad .code-header { color: #F87171; }
+        .code-box.good .code-header { color: #34D399; }
+
+        pre {
+            background: var(--code-bg);
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: #E5E7EB;
+            border: 1px solid var(--border);
+            margin-top: 15px;
+        }
+
+        .contact-form {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 50px;
+            border-radius: 16px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            background: var(--bg-color);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: white;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 130px;
+        }
+
         footer {
             text-align: center;
             padding: 50px 20px;
@@ -226,7 +324,10 @@
             margin-top: 80px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
+            .code-comparison {
+                grid-template-columns: 1fr;
+            }
             header {
                 padding: 15px 5%;
             }
@@ -236,8 +337,8 @@
             .hero {
                 padding: 70px 15px 50px;
             }
-            .cta-group {
-                flex-direction: column;
+            .contact-form {
+                padding: 25px;
             }
         }
     </style>
@@ -248,42 +349,97 @@
         <div class="logo">Conversion Forge<span>.</span></div>
         <nav>
             <a href="#services">Expertise</a>
+            <a href="#audit">Code & Sales</a>
+            <a href="#contact">Contact</a>
             <a href="tel:+17423707792" class="nav-btn">+1 (742) 370-7792</a>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="badge">E-Commerce & Web Design Expert</div>
-        <h1>Turn Visitors Into Buyers with <span>High-Converting</span> Websites</h1>
-        <p>At Conversion Forge, we craft fast, modern, and high-performance online stores and websites designed to maximize sales and scale your brand.</p>
+        <div class="badge">E-Commerce Development & Sales Engineering</div>
+        <h1>We Write Clean Code That<br><span>Drives Real Sales.</span></h1>
+        <p>A website shouldn't just look good—it should actively convert traffic into revenue. We engineer fast, high-converting digital stores designed to maximize your sales.</p>
         <div class="cta-group">
             <a href="tel:+17423707792" class="btn btn-primary">
                 <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 Call Now: +1 (742) 370-7792
             </a>
-            <a href="#services" class="btn btn-secondary">Explore Expertise</a>
+            <a href="#audit" class="btn btn-secondary">See How We Boost Sales</a>
         </div>
     </section>
 
-    <section class="services" id="services">
-        <h2 class="section-title">What We Forge</h2>
+    <section id="services">
+        <h2 class="section-title">How We Help You Grow Sales</h2>
+        <p class="section-subtitle">Technical execution combined with high-performance conversion strategy.</p>
         <div class="grid">
             <div class="card">
-                <h3>E-Commerce Architecture</h3>
-                <p>Complete online store setups optimized for seamless navigation, frictionless mobile checkout, and high conversion rates.</p>
+                <h3>Frictionless Mobile Checkout</h3>
+                <p>Optimizing page flow and layout code so mobile buyers can complete purchases effortlessly without drop-offs.</p>
             </div>
             <div class="card">
-                <h3>Custom Web Design</h3>
-                <p>Responsive, lightning-fast digital interfaces custom-coded with HTML, CSS, and JavaScript for standout brand positioning.</p>
+                <h3>Lightning-Fast Load Speed</h3>
+                <p>Eliminating bloated scripts and unoptimized assets so slow loading times never cost you another customer.</p>
             </div>
             <div class="card">
-                <h3>Conversion Optimization</h3>
-                <p>Strategic layout adjustments, user journey restructuring, and performance tweaks designed to turn casual traffic into loyal buyers.</p>
+                <h3>Conversion-Focused UI</h3>
+                <p>Strategically structured layouts that guide visitor attention straight toward your call-to-action and buy buttons.</p>
             </div>
         </div>
     </section>
 
-    <footer id="contact">
+    <section id="audit">
+        <h2 class="section-title">The Code Audit: Code vs. Lost Sales</h2>
+        <p class="section-subtitle">Why poor code structure kills conversion rates—and how we fix it.</p>
+        
+        <div class="code-comparison">
+            <div class="code-box bad">
+                <div class="code-header">❌ Slow Code = Lost Sales</div>
+                <p>Heavy plugins and unstructured elements slow down render speeds, causing customers to leave before buying.</p>
+                <pre>&lt;div class="main-box"&gt;
+  &lt;div style="font-size: 40px;"&gt;
+    Buy Our Product Here!
+  &lt;/div&gt;
+  &lt;!-- Heavy uncompressed scripts --&gt;
+  &lt;script src="huge-plugin.js"&gt;&lt;/script&gt;
+&lt;/div&gt;</pre>
+            </div>
+
+            <div class="code-box good">
+                <div class="code-header">✅ Clean Code = Higher Revenue</div>
+                <p>Optimized HTML5 and targeted CSS that loads instantly, securing buyer trust and driving maximum sales.</p>
+                <pre>&lt;section class="hero-cta"&gt;
+  &lt;h1&gt;High-Performance Checkout&lt;/h1&gt;
+  &lt;a href="tel:..." class="btn-primary"&gt;
+    Secure Order
+  &lt;/a&gt;
+&lt;/section&gt;</pre>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Ready to Scale Your Sales?</h2>
+        <p class="section-subtitle">Send a message below or call us directly to discuss your project.</p>
+        <div class="contact-form">
+            <form action="mailto:contact@conversionforge.com" method="POST" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email / Phone</label>
+                    <input type="text" id="email" name="email" placeholder="How can we reach you?" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Project Details</label>
+                    <textarea id="message" name="message" placeholder="Tell us about what you want to build..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
         <p>&copy; 2026 Conversion Forge. All rights reserved. Direct Line: +1 (742) 370-7792</p>
     </footer>
 
