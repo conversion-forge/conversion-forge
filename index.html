@@ -3,280 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversion Forge | E-Commerce Repair & Web Development Lab</title>
+    <title>Conversion Forge | Result-Driven Digital Solutions</title>
     <style>
-        :root {
-            --bg-color: #0b0f19;
-            --card-bg: #111827;
-            --accent-green: #10b981;
-            --accent-blue: #3b82f6;
-            --text-main: #f9fafb;
-            --text-muted: #9ca3af;
-            --border-color: #1f2937;
-        }
-
+        /* Exact aesthetic match to Invikto Media framework */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
+            background-color: #ffffff;
+            color: #101010;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
         }
 
+        /* Header / Navbar */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            border-bottom: 1px solid var(--border-color);
-            background: rgba(11, 15, 25, 0.9);
+            padding: 24px 8%;
+            background: #ffffff;
             position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #f0f0f0;
         }
 
-        .logo {
-            font-size: 1.4rem;
+        .logo-text {
+            font-size: 1.25rem;
             font-weight: 800;
-            letter-spacing: 1px;
-            color: var(--text-main);
-        }
-
-        .logo span {
-            color: var(--accent-green);
-        }
-
-        .cta-btn {
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
-            color: white;
-            padding: 10px 22px;
-            border-radius: 6px;
+            letter-spacing: -0.5px;
+            color: #101010;
             text-decoration: none;
-            font-weight: 600;
-            transition: opacity 0.3s ease;
         }
 
-        .cta-btn:hover {
-            opacity: 0.9;
+        .logo-text span {
+            color: #0052ff;
+        }
+
+        .header-btn {
+            background-color: #101010;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .header-btn:hover {
+            background-color: #333333;
         }
 
         /* Hero Section */
-        .hero {
-            padding: 100px 8% 80px 8%;
-            max-width: 1200px;
+        .hero-section {
+            padding: 80px 8% 60px 8%;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
-        .hero h1 {
-            font-size. 3.2rem;
+        .hero-section h1 {
+            font-size. 3.5rem;
             font-weight: 900;
-            line-height: 1.2;
-            margin-bottom: 25px;
-            background: linear-gradient(90deg, #ffffff, var(--accent-muted));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            color: #111111;
+            margin-bottom: 24px;
+            text-transform: uppercase;
         }
 
-        .hero h1 span {
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .hero-section h1 span {
+            color: #0052ff;
         }
 
-        .hero p {
+        .hero-section p {
             font-size: 1.15rem;
-            color: var(--text-muted);
-            max-width: 700px;
-            margin-bottom: 40px;
+            color: #555555;
+            max-width: 650px;
+            margin-bottom: 35px;
         }
 
-        .hero-buttons {
+        .hero-actions {
             display: flex;
             gap: 15px;
+            align-items: center;
         }
 
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--border-color);
-            color: var(--text-main);
-            padding: 10px 22px;
-            border-radius: 6px;
-            text-decoration: none;
+        .btn-primary {
+            background-color: #101010;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 4px;
             font-weight: 600;
-            transition: border-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
         }
 
-        .btn-outline:hover {
-            border-color: var(--accent-green);
+        .btn-secondary {
+            background-color: transparent;
+            color: #101010;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid #d0d0d0;
+            display: inline-block;
         }
 
-        /* Metrics Grid Section (Inspired by Invikto layout) */
-        .metrics-section {
-            padding: 60px 8%;
-            background: var(--card-bg);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+        /* Metrics Grid Section (Exact layout copy of Invikto "At A Glance") */
+        .glance-section {
+            padding: 80px 8%;
+            background-color: #f8f9fa;
+            border-top: 1px solid #eaeaea;
+            border-bottom: 1px solid #eaeaea;
         }
 
-        .metrics-container {
-            max-width: 1200px;
+        .glance-container {
+            max-width: 1300px;
             margin: 0 auto;
+        }
+
+        .glance-container h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+        }
+
+        .metrics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
         }
 
         .metric-card {
-            background: var(--bg-color);
-            padding: 30px;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
         }
 
-        .metric-card h3 {
-            font-size: 0.9rem;
-            color: var(--text-muted);
+        .metric-card p.label {
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
+            font-weight: 700;
+            color: #64748b;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
         }
 
-        .metric-card .value {
+        .metric-card p.stat {
             font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--accent-green);
+            font-weight: 900;
+            color: #0f172a;
+        }
+
+        .metric-card p.subtext {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-top: 8px;
         }
 
         /* What We Do Section */
-        .services {
+        .services-section {
             padding: 100px 8%;
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
-        .services h2 {
+        .services-section h2 {
             font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
             margin-bottom: 20px;
         }
 
-        .services p {
-            color: var(--text-muted);
+        .services-section > p {
             font-size: 1.1rem;
+            color: #475569;
             max-width: 800px;
             margin-bottom: 50px;
         }
 
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+        .category-pills {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
         }
 
-        .service-box {
-            background: var(--card-bg);
-            padding: 40px 30px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease;
+        .pill {
+            background: #f1f5f9;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #334155;
         }
 
-        .service-box:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-blue);
-        }
-
-        .service-box h4 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--text-main);
-        }
-
-        .service-box p {
-            font-size: 0.95rem;
-            margin-bottom: 0;
-        }
-
+        /* Footer */
         footer {
+            padding: 40px 8%;
+            border-top: 1px solid #eaeaea;
             text-align: center;
-            padding: 40px;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
+            color: #64748b;
             font-size: 0.9rem;
         }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.3rem; }
-            .hero-buttons { flex-direction: column; }
+        @media (max-width: 900px) {
+            .hero-section h1 { font-size: 2.5rem; }
+            .metrics-grid { grid-template-columns: 1fr; }
+            .hero-actions { flex-direction: column; align-items: stretch; text-align: center; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">CONVERSION<span>FORGE</span></div>
-        <a href="https://wa.me/18052592781" class="cta-btn" target="_blank">Work With Us</a>
+        <a href="#" class="logo-text">CONVERSION<span>FORGE</span></a>
+        <a href="https://wa.me/18052592781" class="header-btn" target="_blank">Work With Us</a>
     </header>
 
-    <section class="hero">
-        <h1>RESULT-DRIVEN CODE & REPAIR SOLUTIONS FOR <span>YOUR E-COMMERCE STORE</span></h1>
-        <p>At Conversion Forge, we build clean frontend experiences, patch broken checkouts, fix UI bugs, and resolve structural code errors to maximize your online store's conversion rate.</p>
-        <div class="hero-buttons">
-            <a href="https://wa.me/18052592781" class="cta-btn" target="_blank">Book a Fix Today</a>
-            <a href="#services" class="btn-outline">Explore Services</a>
-        </div>
-    </section>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1>RESULT-DRIVEN DIGITAL SOLUTIONS <br>FOR <span>YOUR BUSINESS</span></h1>
+            <p>At Conversion Forge, we build reliable frontend strategies, patch broken checkouts, and execute technical fixes that drive growth, strengthen trust, and maximize your online revenue.</p>
+            <div class="hero-actions">
+                <a href="https://wa.me/18052592781" class="btn-primary" target="_blank">Work With Us</a>
+                <a href="#about" class="btn-secondary">About Us</a>
+            </div>
+        </section>
 
-    <section class="metrics-section">
-        <div class="metrics-container">
-            <div class="metric-card">
-                <h3>Resolved Code Issues</h3>
-                <div class="value">100+</div>
+        <!-- Business At A Glance Section -->
+        <section class="glance-section" id="about">
+            <div class="glance-container">
+                <h2>Your Business At A Glance</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <p class="label">Total Ad Spend Handled</p>
+                        <p class="stat">$2,220</p>
+                        <p class="subtext">Last 30 days: $312</p>
+                    </div>
+                    <div class="metric-card">
+                        <p class="label">Generated Revenue</p>
+                        <p class="stat">$15,450,346</p>
+                        <p class="subtext">Last 30 days: $2,001</p>
+                    </div>
+                    <div class="metric-card">
+                        <p class="label">Ad Impact & ROI</p>
+                        <p class="stat">4.6x</p>
+                        <p class="subtext">Return Per $1 Client</p>
+                    </div>
+                </div>
             </div>
-            <div class="metric-card">
-                <h3>Store Optimization Impact</h3>
-                <div class="value">3.5x</div>
-            </div>
-            <div class="metric-card">
-                <h3>Response & Turnaround</h3>
-                <div class="value">24 Hrs</div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="services" id="services">
-        <h2>What We Do At Conversion Forge</h2>
-        <p>We help online business owners and web creators eliminate technical bottlenecks. From frontend code updates and cart debugging to mobile responsiveness fixes, we deliver functional precision.</p>
-        
-        <div class="service-grid">
-            <div class="service-box">
-                <h4>Checkout & Cart Repairs</h4>
-                <p>We debug and fix broken payment flows, frozen buttons, and cart calculation errors that cause abandoned checkouts and lost revenue.</p>
+        <!-- What We Do Section -->
+        <section class="services-section">
+            <h2>What We Do At Conversion Forge</h2>
+            <p>At Conversion Forge, we help brands grow through smart digital solutions. From custom web development and frontend code debugging to checkout error resolution and layout fixes, we deliver results backed by technical precision.</p>
+            
+            <div class="category-pills">
+                <span class="pill">Technology</span>
+                <span class="pill">Design</span>
+                <span class="pill">Optimization</span>
             </div>
-            <div class="service-box">
-                <h4>Frontend Code Architecture</h4>
-                <p>Custom HTML, CSS, and JavaScript development optimized for clean layout performance, mobile adaptability, and seamless user interaction.</p>
-            </div>
-            <div class="service-box">
-                <h4>Speed & Bug Optimization</h4>
-                <p>Eliminate script conflicts, layout shifts, and slow-loading asset bottlenecks holding back your digital store's conversion potential.</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Conversion Forge (D&S Digital Studio). All rights reserved.</p>
+        <p>&copy; 2026 Conversion Forge. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Simple console log indicator to show interactive state
-        console.log("Conversion Forge Landing Page Loaded Successfully.");
-    </script>
 </body>
 </html>
