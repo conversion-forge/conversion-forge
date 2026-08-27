@@ -3,33 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversion Forge | E-Commerce Solutions & Sales Repair</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <title>Conversion Forge | E-Commerce Repair & Web Development Lab</title>
     <style>
         :root {
-            --bg-color: #07090E;
-            --card-bg: #101726;
-            --text-primary: #F9FAFB;
-            --text-secondary: #9CA3AF;
-            --accent: #3B82F6;
-            --whatsapp-green: #25D366;
-            --call-blue: #2563EB;
-            --accent-glow: rgba(59, 130, 246, 0.15);
-            --border: #1F2937;
-            --code-bg: #030508;
+            --bg-color: #0b0f19;
+            --card-bg: #111827;
+            --accent-green: #10b981;
+            --accent-blue: #3b82f6;
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+            --border-color: #1f2937;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-primary);
+            color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -39,566 +34,249 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 8%;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(11, 15, 25, 0.9);
             position: sticky;
             top: 0;
-            background: rgba(7, 9, 14, 0.85);
-            backdrop-filter: blur(12px);
             z-index: 1000;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .brand-logo {
-            width: 42px;
-            height: 42px;
-            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.1rem;
-            color: white;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-            letter-spacing: -1px;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
+            backdrop-filter: blur(10px);
         }
 
         .logo {
+            font-size: 1.4rem;
             font-weight: 800;
-            font-size: 1.2rem;
-            color: var(--text-primary);
-            letter-spacing: -0.5px;
-            line-height: 1.1;
+            letter-spacing: 1px;
+            color: var(--text-main);
         }
 
         .logo span {
-            color: var(--accent);
+            color: var(--accent-green);
         }
 
-        .logo-sub {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        nav a:hover {
-            color: var(--text-primary);
-        }
-
-        .nav-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .nav-btn {
-            padding: 8px 14px;
+        .cta-btn {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+            color: white;
+            padding: 10px 22px;
             border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.85rem;
             text-decoration: none;
-            color: white !important;
-            transition: transform 0.2s, background-color 0.2s;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
         }
 
-        .nav-btn.whatsapp {
-            background-color: var(--whatsapp-green);
-        }
-
-        .nav-btn.call {
-            background-color: var(--call-blue);
-        }
-
-        .nav-btn:hover {
-            transform: translateY(-1px);
+        .cta-btn:hover {
             opacity: 0.9;
         }
 
+        /* Hero Section */
         .hero {
-            text-align: center;
-            padding: 110px 20px 70px;
-            max-width: 900px;
+            padding: 100px 8% 80px 8%;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .badge {
-            display: inline-block;
-            background: var(--accent-glow);
-            color: var(--accent);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 24px;
-            border: 1px solid rgba(59, 130, 246, 0.25);
-        }
-
         .hero h1 {
-            font-size: clamp(2.75rem, 5vw, 4.25rem);
-            font-weight: 800;
-            letter-spacing: -1.5px;
-            line-height: 1.12;
-            margin-bottom: 24px;
+            font-size. 3.2rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            background: linear-gradient(90deg, #ffffff, var(--accent-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero h1 span {
-            background: linear-gradient(135deg, #60A5FA, #3B82F6);
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero p {
             font-size: 1.15rem;
-            color: var(--text-secondary);
+            color: var(--text-muted);
+            max-width: 700px;
             margin-bottom: 40px;
-            max-width: 680px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        .cta-group {
+        .hero-buttons {
             display: flex;
             gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
         }
 
-        .btn {
-            padding: 14px 26px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-main);
+            padding: 10px 22px;
+            border-radius: 6px;
             text-decoration: none;
-            transition: all 0.2s ease;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: white;
+            font-weight: 600;
+            transition: border-color 0.3s;
         }
 
-        .btn-whatsapp {
-            background-color: var(--whatsapp-green);
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+        .btn-outline:hover {
+            border-color: var(--accent-green);
         }
 
-        .btn-whatsapp:hover {
-            background-color: #20ba5a;
-            transform: translateY(-2px);
-        }
-
-        .btn-call {
-            background-color: var(--call-blue);
-            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
-        }
-
-        .btn-call:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
-        }
-
-        /* Interactive Diagnostic Section */
-        .diagnostic-container {
+        /* Metrics Grid Section (Inspired by Invikto layout) */
+        .metrics-section {
+            padding: 60px 8%;
             background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 40px;
-            max-width: 850px;
-            margin: 40px auto 0;
-            text-align: left;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .diagnostic-container h3 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-            color: var(--text-primary);
-        }
-
-        .diagnostic-container p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-
-        .diagnostic-tabs {
+        .metrics-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin-bottom: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
         }
 
-        @media (max-width: 768px) {
-            .diagnostic-tabs { grid-template-columns: 1fr; }
-        }
-
-        .diag-tab {
+        .metric-card {
             background: var(--bg-color);
-            border: 1px solid var(--border);
-            padding: 12px 16px;
-            border-radius: 8px;
-            color: var(--text-secondary);
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 0.85rem;
-            transition: all 0.2s;
-            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
         }
 
-        .diag-tab.active, .diag-tab:hover {
-            border-color: var(--accent);
-            color: var(--text-primary);
-            background: var(--accent-glow);
+        .metric-card h3 {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
         }
 
-        .diag-result {
-            background: var(--code-bg);
-            border: 1px solid var(--border);
-            padding: 20px;
-            border-radius: 8px;
-            font-size: 0.95rem;
+        .metric-card .value {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent-green);
         }
 
-        .diag-result strong {
-            color: #34D399;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        section {
-            padding: 80px 8%;
+        /* What We Do Section */
+        .services {
+            padding: 100px 8%;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.25rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            letter-spacing: -0.5px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            font-size: 1.05rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 40px 35px;
-            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .card h3 {
-            font-size: 1.35rem;
-            font-weight: 700;
-            margin-bottom: 14px;
-        }
-
-        .card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .code-comparison {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .code-box {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 30px;
-        }
-
-        .code-box.bad {
-            border-color: rgba(239, 68, 68, 0.3);
-        }
-
-        .code-box.good {
-            border-color: rgba(16, 185, 129, 0.4);
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.05);
-        }
-
-        .code-header {
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .code-box.bad .code-header { color: #F87171; }
-        .code-box.good .code-header { color: #34D399; }
-
-        pre {
-            background: var(--code-bg);
-            padding: 20px;
-            border-radius: 8px;
-            overflow-x: auto;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.85rem;
-            color: #E5E7EB;
-            border: 1px solid var(--border);
-            margin-top: 15px;
-        }
-
-        .contact-form {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            padding: 50px;
-            border-radius: 16px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .form-group {
+        .services h2 {
+            font-size: 2.5rem;
             margin-bottom: 20px;
-            text-align: left;
         }
 
-        .form-group label {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 8px;
-            color: var(--text-primary);
+        .services p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-bottom: 50px;
         }
 
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 14px;
-            background: var(--bg-color);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: white;
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .service-box {
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .service-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+        }
+
+        .service-box h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .service-box p {
             font-size: 0.95rem;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            border-color: var(--accent);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            height: 130px;
+            margin-bottom: 0;
         }
 
         footer {
             text-align: center;
-            padding: 50px 20px;
-            border-top: 1px solid var(--border);
-            color: var(--text-secondary);
+            padding: 40px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
             font-size: 0.9rem;
-            margin-top: 80px;
         }
 
-        @media (max-width: 900px) {
-            .code-comparison {
-                grid-template-columns: 1fr;
-            }
-            header {
-                padding: 15px 5%;
-            }
-            nav a:not(.nav-actions) {
-                display: none;
-            }
-            .hero {
-                padding: 70px 15px 50px;
-            }
-            .contact-form {
-                padding: 25px;
-            }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.3rem; }
+            .hero-buttons { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container">
-            <div class="brand-logo">D&S</div>
-            <div class="logo-text">
-                <div class="logo">Conversion Forge<span>.</span></div>
-                <div class="logo-sub">Digital Studio Hub</div>
-            </div>
-        </div>
-        <nav>
-            <a href="#services">Solutions</a>
-            <a href="#audit">Fixes</a>
-            <a href="#contact">Contact</a>
-            <div class="nav-actions">
-                <a href="https://wa.me/18052592781" target="_blank" class="nav-btn whatsapp">WhatsApp</a>
-                <a href="tel:+18052592781" class="nav-btn call">Call</a>
-            </div>
-        </nav>
+        <div class="logo">CONVERSION<span>FORGE</span></div>
+        <a href="https://wa.me/18052592781" class="cta-btn" target="_blank">Work With Us</a>
     </header>
 
     <section class="hero">
-        <div class="badge">E-Commerce Solutions & Sales Repair</div>
-        <h1>Is Your Website Broken or Not Making Sales? <br><span>We Fix It & Drive Revenue.</span></h1>
-        <p>Complete web design and e-commerce solutions for stores that aren't working perfectly. Whether it's a broken checkout system, payment errors, or zero sales, we fix the code and optimize your store to convert traffic into real buyers.</p>
+        <h1>RESULT-DRIVEN CODE & REPAIR SOLUTIONS FOR <span>YOUR E-COMMERCE STORE</span></h1>
+        <p>At Conversion Forge, we build clean frontend experiences, patch broken checkouts, fix UI bugs, and resolve structural code errors to maximize your online store's conversion rate.</p>
+        <div class="hero-buttons">
+            <a href="https://wa.me/18052592781" class="cta-btn" target="_blank">Book a Fix Today</a>
+            <a href="#services" class="btn-outline">Explore Services</a>
+        </div>
+    </section>
+
+    <section class="metrics-section">
+        <div class="metrics-container">
+            <div class="metric-card">
+                <h3>Resolved Code Issues</h3>
+                <div class="value">100+</div>
+            </div>
+            <div class="metric-card">
+                <h3>Store Optimization Impact</h3>
+                <div class="value">3.5x</div>
+            </div>
+            <div class="metric-card">
+                <h3>Response & Turnaround</h3>
+                <div class="value">24 Hrs</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2>What We Do At Conversion Forge</h2>
+        <p>We help online business owners and web creators eliminate technical bottlenecks. From frontend code updates and cart debugging to mobile responsiveness fixes, we deliver functional precision.</p>
         
-        <div class="cta-group">
-            <a href="https://wa.me/18052592781" target="_blank" class="btn btn-whatsapp">
-                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                Chat on WhatsApp (+1 805-259-2781)
-            </a>
-            <a href="tel:+18052592781" class="btn btn-call">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                Call Direct Now
-            </a>
-        </div>
-
-        <!-- Interactive Diagnostic Widget -->
-        <div class="diagnostic-container">
-            <h3>🔍 Instant Site Issue Selector</h3>
-            <p>Select what your website is currently experiencing to see how we fix it:</p>
-            <div class="diagnostic-tabs">
-                <div class="diag-tab active" onclick="showDiag('checkout', this)">Broken Checkout</div>
-                <div class="diag-tab" onclick="showDiag('sales', this)">Getting No Sales</div>
-                <div class="diag-tab" onclick="showDiag('speed', this)">Slow Loading</div>
+        <div class="service-grid">
+            <div class="service-box">
+                <h4>Checkout & Cart Repairs</h4>
+                <p>We debug and fix broken payment flows, frozen buttons, and cart calculation errors that cause abandoned checkouts and lost revenue.</p>
             </div>
-            <div class="diag-result" id="diagBox">
-                <strong>🛠️ The Fix for Broken Checkouts:</strong> We debug payment gateway hooks, remove conflicting scripts, and rebuild clean HTML/JS order forms so customers check out successfully every time.
+            <div class="service-box">
+                <h4>Frontend Code Architecture</h4>
+                <p>Custom HTML, CSS, and JavaScript development optimized for clean layout performance, mobile adaptability, and seamless user interaction.</p>
             </div>
-        </div>
-    </section>
-
-    <section id="services">
-        <h2 class="section-title">Complete E-Commerce Solutions</h2>
-        <p class="section-subtitle">If your website is struggling with technical issues or low sales, we provide the fix.</p>
-        <div class="grid">
-            <div class="card">
-                <h3>Broken Checkout & Cart Repair</h3>
-                <p>Diagnose and fix payment gateway errors, frozen buttons, and checkout drop-offs so customers can complete purchases successfully.</p>
+            <div class="service-box">
+                <h4>Speed & Bug Optimization</h4>
+                <p>Eliminate script conflicts, layout shifts, and slow-loading asset bottlenecks holding back your digital store's conversion potential.</p>
             </div>
-            <div class="card">
-                <h3>Sales & Conversion Optimization</h3>
-                <p>Restructure unoptimized pages and layout logic to turn dead traffic into active, paying customers.</p>
-            </div>
-            <div class="card">
-                <h3>Full Custom Web Development</h3>
-                <p>Build lightning-fast, high-performance websites and online stores from scratch using clean HTML, CSS, and JavaScript.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="audit">
-        <h2 class="section-title">Why Your Site Might Be Losing Sales</h2>
-        <p class="section-subtitle">A quick technical look at common errors and how Conversion Forge fixes them.</p>
-        
-        <div class="code-comparison">
-            <div class="code-box bad">
-                <div class="code-header">❌ Broken Checkouts & Dead Traffic</div>
-                <p>Unoptimized scripts, broken forms, and slow load speeds frustrate shoppers and kill your sales conversion.</p>
-                <pre>&lt;div class="checkout-error"&gt;
-  &lt;!-- Payment button fails to submit --&gt;
-  &lt;button onclick="brokenCart()"&gt;
-    Complete Order (Error)
-  &lt;/button&gt;
-&lt;/div&gt;</pre>
-            </div>
-
-            <div class="code-box good">
-                <div class="code-header">✅ The Conversion Forge Solution</div>
-                <p>Clean error-free code and streamlined payment workflows designed to instantly capture orders and boost revenue.</p>
-                <pre>&lt;form action="/secure-checkout" method="POST"&gt;
-  &lt;button type="submit" class="btn-whatsapp"&gt;
-    Secure Immediate Order
-  &lt;/button&gt;
-&lt;/form&gt;</pre>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2 class="section-title">Get Your Website Fixed Today</h2>
-        <p class="section-subtitle">Reach out via WhatsApp or Call, or send us a message below.</p>
-        <div class="contact-form">
-            <form action="mailto:contact@conversionforge.com" method="POST" enctype="text/plain">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Your Website / Contact</label>
-                    <input type="text" id="email" name="email" placeholder="Drop your website link or phone number" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">What's wrong with the site?</label>
-                    <textarea id="message" name="message" placeholder="Tell us if your checkout is broken or if you need more sales..." required></textarea>
-                </div>
-                <button type="submit" class="btn btn-whatsapp" style="width: 100%; justify-content: center;">Send Project Details</button>
-            </form>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 D&S Conversion Forge. All rights reserved. Phone & WhatsApp: +1 (805) 259-2781</p>
+        <p>&copy; 2026 Conversion Forge (D&S Digital Studio). All rights reserved.</p>
     </footer>
 
     <script>
-        function showDiag(type, element) {
-            document.querySelectorAll('.diag-tab').forEach(t => t.classList.remove('active'));
-            element.classList.add('active');
-            
-            const box = document.getElementById('diagBox');
-            if(type === 'checkout') {
-                box.innerHTML = '<strong>🛠️ The Fix for Broken Checkouts:</strong> We debug payment gateway hooks, remove conflicting scripts, and rebuild clean HTML/JS order forms so customers check out successfully every time.';
-            } else if(type === 'sales') {
-                box.innerHTML = '<strong>🚀 The Fix for Low Sales:</strong> We overhaul your layout hierarchy, optimize trust elements, and streamline clear call-to-action buttons to convert visitors into buyers.';
-            } else if(type === 'speed') {
-                box.innerHTML = '<strong>⚡ The Fix for Slow Speed:</strong> We strip out bloated dependencies, minimize CSS/JS execution time, and implement high-performance caching to load your store instantly.';
-            }
-        }
+        // Simple console log indicator to show interactive state
+        console.log("Conversion Forge Landing Page Loaded Successfully.");
     </script>
 </body>
 </html>
