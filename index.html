@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+from pathlib import Path
+
+html = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -89,9 +91,13 @@ footer{background:#050a11;color:#8791a0;padding:45px 0}.footer-inner{display:fle
 
 <script>
 function toggleMenu(){const m=document.getElementById("mobileMenu");m.style.display=m.style.display==="none"?"block":"none";}
-function sendToWhatsApp(e){e.preventDefault();const n=document.getElementById("name").value.trim(),em=document.getElementById("email").value.trim(),b=document.getElementById("business").value.trim(),msg=document.getElementById("message").value.trim();const text="Hello Conversion Forge!\n\nName: "+n+"\nEmail: "+em+"\nBusiness: "+b+"\n\nProject details:\n"+msg;window.open("https://wa.me/18052592781?text="+encodeURIComponent(text),"_blank");}
+function sendToWhatsApp(e){e.preventDefault();const n=document.getElementById("name").value.trim(),em=document.getElementById("email").value.trim(),b=document.getElementById("business").value.trim(),msg=document.getElementById("message").value.trim();const text="Hello Conversion Forge!\\n\\nName: "+n+"\\nEmail: "+em+"\\nBusiness: "+b+"\\n\\nProject details:\\n"+msg;window.open("https://wa.me/18052592781?text="+encodeURIComponent(text),"_blank");}
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")}),{threshold:.12});
 document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 </script>
 </body>
-</html>
+</html>"""
+
+path = Path("/mnt/data/index.html")
+path.write_text(html, encoding="utf-8")
+print(f"Created {path} ({path.stat().st_size:,} bytes)")
