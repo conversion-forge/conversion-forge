@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversion Forge | E-Commerce Code Repair & Development</title>
+    <title>Conversion Forge | Result-Driven Digital Solutions</title>
     <style>
-        /* Core Style Settings */
         * {
             margin: 0;
             padding: 0;
@@ -20,35 +19,53 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Header / Navbar */
+        /* Header / Navbar matches Invikto layout exactly */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 24px 8%;
             background: #ffffff;
-            position: absolute; /* Changed to absolute to overlay image */
+            position: sticky;
             top: 0;
-            width: 100%;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid #f0f0f0;
         }
 
-        .logo-text {
-            font-size: 1.25rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            color: #ffffff; /* Changed to white for image overlay */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
         }
 
-        .logo-text span {
-            color: #3b82f6; /* Blue accent */
+        .logo-container img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .header-nav a:hover {
+            color: #0052ff;
         }
 
         .header-btn {
-            background-color: #ffffff;
-            color: #101010;
+            background-color: #101010;
+            color: #ffffff;
             padding: 10px 20px;
             border-radius: 4px;
             font-size: 0.9rem;
@@ -58,88 +75,70 @@
         }
 
         .header-btn:hover {
-            background-color: #f0f0f0;
+            background-color: #333333;
         }
 
-        /* NEW Hero Section with Image Background */
-        .hero-image-banner {
-            /* THIS IS WHERE YOU ADD THE IMAGE */
-            /* Replace 'image_11.png' with your actual hosted image URL */
-            background-image: url('image_11.png'); 
-            
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            
-            /* Full viewport height for impact */
-            height: 100vh; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            padding: 0 8%;
+        /* Hero Section */
+        .hero-section {
+            padding: 80px 8% 60px 8%;
+            max-width: 1300px;
+            margin: 0 auto;
         }
 
-        /* Dark Overlay to make text readable */
-        .hero-image-banner::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* 60% dark overlay */
-            z-index: 1;
-        }
-
-        .hero-content-wrapper {
-            z-index: 2; /* Pushes text above the overlay */
-            max-width: 800px;
-        }
-
-        .hero-image-banner h1 {
-            font-size. 4rem;
+        .hero-section h1 {
+            font-size: 3.5rem;
             font-weight: 900;
             line-height: 1.1;
-            letter-spacing: -2px;
-            color: #ffffff;
-            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+            color: #111111;
+            margin-bottom: 24px;
             text-transform: uppercase;
         }
 
-        .hero-image-banner h1 span {
-            color: #3b82f6; /* Blue accent */
+        .hero-section h1 span {
+            color: #0052ff;
         }
 
-        .hero-image-banner p {
-            font-size. 1.3rem;
-            color: #e0e0e0;
-            margin-bottom: 40px;
-            font-weight: 300;
+        .hero-section p {
+            font-size: 1.15rem;
+            color: #555555;
+            max-width: 650px;
+            margin-bottom: 35px;
         }
 
-        .btn-action {
-            background-color: #10b981; /* Green action button */
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background-color: #101010;
             color: #ffffff;
-            padding: 16px 32px;
+            padding: 12px 24px;
             border-radius: 4px;
-            font-weight: 700;
+            font-weight: 600;
             text-decoration: none;
-            font-size: 1.1rem;
             display: inline-block;
-            transition: background 0.3s ease;
         }
 
-        .btn-action:hover {
-            background-color: #059669;
+        .btn-secondary {
+            background-color: transparent;
+            color: #101010;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid #d0d0d0;
+            display: inline-block;
         }
 
-        /* Rest of the sections (kept same as before) */
+        /* Business At A Glance Section */
         .glance-section {
             padding: 80px 8%;
             background-color: #f8f9fa;
             border-top: 1px solid #eaeaea;
+            border-bottom: 1px solid #eaeaea;
         }
 
         .glance-container {
@@ -165,6 +164,7 @@
             padding: 35px;
             border-radius: 8px;
             border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
         }
 
         .metric-card p.label {
@@ -188,6 +188,43 @@
             margin-top: 8px;
         }
 
+        /* What We Do Section */
+        .services-section {
+            padding: 100px 8%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .services-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+
+        .services-section > p {
+            font-size: 1.1rem;
+            color: #475569;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+
+        .category-pills {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .pill {
+            background: #f1f5f9;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #334155;
+        }
+
+        /* Footer */
         footer {
             padding: 40px 8%;
             border-top: 1px solid #eaeaea;
@@ -197,56 +234,77 @@
         }
 
         @media (max-width: 900px) {
-            .hero-image-banner h1 { font-size: 2.5rem; }
+            .hero-section h1 { font-size: 2.5rem; }
             .metrics-grid { grid-template-columns: 1fr; }
+            .hero-actions { flex-direction: column; align-items: stretch; text-align: center; }
+            .header-nav { display: none; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo-text">CONVERSION<span>FORGE</span></a>
-        <a href="https://wa.me/18052592781" class="header-btn" target="_blank">Connect on WhatsApp</a>
+        <!-- Your custom logo integrated here -->
+        <a href="#" class="logo-container">
+            <img src="1000386962.jpg" alt="Conversion Forge Logo">
+        </a>
+        <nav class="header-nav">
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+        </nav>
+        <a href="https://wa.me/18052592781" class="header-btn" target="_blank">Work With Us</a>
     </header>
 
     <main>
-        <!-- NEW Hero Section: Image Banner -->
-        <section class="hero-image-banner">
-            <div class="content-overlay"></div>
-            <div class="hero-content-wrapper">
-                <h1>PRECISION CODE FOR <span>FLAWLESS E-COMMERCE</span></h1>
-                <p>We are the elite repair lab that fixes broken checkouts, eliminates site bugs, and optimizes frontend performance to maximize your store's revenue.</p>
-                <a href="https://wa.me/18052592781" class="btn-action" target="_blank">Get Your Free Audit</a>
+        <!-- Hero Section matching the exact Invikto structure layout -->
+        <section class="hero-section">
+            <h1>RESULT-DRIVEN DIGITAL SOLUTIONS <br>FOR <span>YOUR BUSINESS</span></h1>
+            <p>At Conversion Forge, we build reliable strategies that drive growth, strengthen trust, and encourage creative innovation for your brand.</p>
+            <div class="hero-actions">
+                <a href="https://wa.me/18052592781" class="btn-primary" target="_blank">Work With Us</a>
+                <a href="#about" class="btn-secondary">About Us</a>
             </div>
         </section>
 
         <!-- Business At A Glance Section -->
         <section class="glance-section" id="about">
             <div class="glance-container">
-                <h2>Your Store's Technical Health</h2>
+                <h2>Your Business At A Glance</h2>
                 <div class="metrics-grid">
                     <div class="metric-card">
-                        <p class="label">Average Issue Resolution</p>
-                        <p class="stat"><24 Hrs</p>
-                        <p class="subtext">Rapid deployment of critical fixes.</p>
+                        <p class="label">Ad Spend</p>
+                        <p class="stat">$2,220</p>
+                        <p class="subtext">Last 30 days : $312</p>
                     </div>
                     <div class="metric-card">
-                        <p class="label">Optimization Impact</p>
-                        <p class="stat">3.5x</p>
-                        <p class="subtext">Typical conversion lift after repair.</p>
+                        <p class="label">Revenue</p>
+                        <p class="stat">$15,450,346</p>
+                        <p class="subtext">Last 30 days : $2,001</p>
                     </div>
                     <div class="metric-card">
-                        <p class="label">Service Scope</p>
-                        <p class="stat">Full Stack</p>
-                        <p class="subtext">From checkout to mobile layout.</p>
+                        <p class="label">Ad Impact</p>
+                        <p class="stat">4.6x</p>
+                        <p class="subtext">Return Per $1 Client</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- What We Do Section -->
+        <section class="services-section" id="services">
+            <h2>What We Do At Conversion Forge</h2>
+            <p>At Conversion Forge, we help brands grow through smart digital strategies. From social media management to targeted ads, product research, and website development, we deliver results backed by data and creativity.</p>
+            
+            <div class="category-pills">
+                <span class="pill">Marketing</span>
+                <span class="pill">Technology</span>
+                <span class="pill">Design</span>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Conversion Forge. All rights reserved. We fix what breaks your sales.</p>
+        <p>&copy; 2026 Conversion Forge. All rights reserved.</p>
     </footer>
 
 </body>
