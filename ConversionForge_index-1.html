@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Conversion Forge — result-driven digital solutions for growing businesses.">
+<title>Conversion Forge | Digital Growth Agency</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root{
+  --ink:#07111f;
+  --muted:#667085;
+  --line:#e7ebf0;
+  --blue:#1677ff;
+  --green:#27d69a;
+  --soft:#f5f8fb;
+  --white:#fff;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"DM Sans",sans-serif;
+  color:var(--ink);
+  background:#fff;
+  line-height:1.55;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+.container{width:min(1180px,90%);margin:auto}
+
+/* NAV */
+.nav{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(14px);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.logo{display:flex;align-items:center}
+.logo img{
+  width:145px;
+  height:58px;
+  object-fit:contain;
+}
+.navlinks{display:flex;gap:34px;align-items:center}
+.navlinks a{font-size:14px;font-weight:600;color:#344054}
+.navlinks a:hover{color:var(--blue)}
+.navcta{
+  background:var(--ink);
+  color:#fff;
+  padding:12px 20px;
+  border-radius:8px;
+  font-size:14px;
+  font-weight:700;
+}
+.menu{display:none;border:0;background:none;font-size:28px}
+
+/* HERO */
+.hero{
+  padding:92px 0 80px;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(22,119,255,.12),transparent 28%),
+    radial-gradient(circle at 10% 70%,rgba(39,214,154,.09),transparent 25%);
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr .92fr;
+  gap:70px;
+  align-items:center;
+}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 12px;
+  border:1px solid #dce4ed;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:#475467;
+  background:#fff;
+  margin-bottom:24px;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green)}
+h1{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:clamp(45px,6vw,76px);
+  line-height:.98;
+  letter-spacing:-3px;
+  margin-bottom:25px;
+}
+.gradient{
+  background:linear-gradient(90deg,var(--blue),#00aeea,var(--green));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.hero p{
+  color:var(--muted);
+  font-size:18px;
+  max-width:590px;
+  margin-bottom:32px;
+}
+.actions{display:flex;gap:13px;align-items:center}
+.btn{
+  padding:14px 22px;
+  border-radius:8px;
+  font-weight:700;
+  font-size:14px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+.primary{background:var(--ink);color:#fff}
+.secondary{border:1px solid #d7dee7;background:#fff}
+.hero-image{
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 30px 70px rgba(7,17,31,.16);
+  border:8px solid #fff;
+}
+.hero-image img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+}
+
+/* TRUST BAR */
+.trust{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:25px 0;
+}
+.trust-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+.trust span{
+  font-size:12px;
+  color:#98a2b3;
+  font-weight:700;
+  letter-spacing:1.3px;
+  text-transform:uppercase;
+}
+
+/* STATS */
+.stats{padding:82px 0}
+.section-head{max-width:680px;margin-bottom:42px}
+.kicker{
+  color:var(--blue);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+h2{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:clamp(34px,4vw,52px);
+  line-height:1.05;
+  letter-spacing:-2px;
+}
+.section-head p{color:var(--muted);margin-top:15px}
+.statgrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.stat{
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#fff;
+}
+.stat small{
+  display:block;
+  color:#667085;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-size:11px;
+  font-weight:800;
+  margin-bottom:10px;
+}
+.stat strong{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:38px;
+}
+.stat p{font-size:13px;color:#667085;margin-top:5px}
+
+/* SERVICES */
+.services{padding:90px 0;background:var(--soft)}
+.servicegrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:40px;
+}
+.service{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:30px;
+  transition:.25s;
+}
+.service:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(7,17,31,.08)}
+.icon{
+  width:44px;height:44px;
+  display:grid;place-items:center;
+  border-radius:12px;
+  background:#edf5ff;
+  color:var(--blue);
+  font-weight:800;
+  margin-bottom:20px;
+}
+.service h3{font-family:"Space Grotesk";font-size:21px;margin-bottom:9px}
+.service p{font-size:14px;color:#667085}
+
+/* CASE STUDIES */
+.work{padding:100px 0}
+.workgrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin-top:45px;
+}
+.project{
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+  background:#fff;
+}
+.project-image{
+  background:#eef2f6;
+  padding:0;
+}
+.project-image img{
+  width:100%;
+  height:430px;
+  object-fit:cover;
+  object-position:center;
+}
+.project-body{padding:25px}
+.project-tag{
+  color:var(--blue);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:1.2px;
+  font-weight:800;
+}
+.project h3{
+  font-family:"Space Grotesk";
+  font-size:27px;
+  margin:6px 0 8px;
+}
+.project p{color:#667085;font-size:14px}
+
+/* ABOUT */
+.about{
+  padding:100px 0;
+  background:#07111f;
+  color:#fff;
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:70px;
+  align-items:center;
+}
+.about h2{max-width:560px}
+.about p{color:#aeb9c8;margin:22px 0;max-width:620px}
+.about .btn{background:#fff;color:#07111f}
+.checks{display:grid;gap:12px;margin-top:28px}
+.check{display:flex;gap:10px;color:#d8e0ea;font-size:14px}
+.check b{color:var(--green)}
+.about-card{
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:20px;
+  padding:12px;
+}
+.about-card img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  border-radius:13px;
+}
+
+/* CTA */
+.cta{padding:100px 0}
+.ctabox{
+  border-radius:24px;
+  padding:65px;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(39,214,154,.28),transparent 28%),
+    linear-gradient(135deg,#0a1a2d,#0b2942);
+  color:#fff;
+}
+.ctabox h2{max-width:650px}
+.ctabox p{color:#b9c6d4;max-width:620px;margin:17px 0 28px}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:35px 0}
+.footerrow{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.footerlogo img{width:125px;height:50px;object-fit:contain}
+footer p{font-size:12px;color:#98a2b3}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:55px;height:55px;
+  border-radius:50%;
+  background:#20c76a;
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-size:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,.18);
+  z-index:200;
+}
+
+/* MOBILE */
+@media(max-width:850px){
+  .nav{height:70px}
+  .navlinks,.navcta{display:none}
+  .menu{display:block}
+  .hero{padding:60px 0}
+  .hero-grid,.about-grid{grid-template-columns:1fr;gap:40px}
+  h1{letter-spacing:-2px}
+  .trust-row{flex-wrap:wrap;justify-content:center}
+  .statgrid,.servicegrid{grid-template-columns:1fr}
+  .workgrid{grid-template-columns:1fr}
+  .project-image img{height:330px}
+  .about{padding:70px 0}
+  .cta{padding:70px 0}
+  .ctabox{padding:38px 25px}
+  .footerrow{flex-direction:column;text-align:center}
+}
+@media(max-width:500px){
+  .container{width:92%}
+  .actions{flex-direction:column;align-items:stretch}
+  .btn{width:100%}
+  .hero-image img,.about-card img{aspect-ratio:1/1}
+}
+</style>
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%">
+    <a class="logo" href="#">
+      <img src="1000386962.jpg" alt="Conversion Forge">
+    </a>
+
+    <nav class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="navcta" href="https://wa.me/18052592781" target="_blank">Let's Talk ↗</a>
+    <button class="menu" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> Digital growth & conversion</div>
+      <h1>WE BUILD <span class="gradient">DIGITAL EXPERIENCES</span> THAT CONVERT.</h1>
+      <p>Conversion Forge helps ambitious brands turn attention into action through strategy, high-converting websites, creative marketing and data-driven growth.</p>
+
+      <div class="actions">
+        <a class="btn primary" href="https://wa.me/18052592781" target="_blank">Start a Project ↗</a>
+        <a class="btn secondary" href="#work">See Our Work</a>
+      </div>
+    </div>
+
+    <!-- REAL IMAGE: 1000387859.jpg -->
+    <div class="hero-image">
+      <img src="1000387859.jpg" alt="Digital analytics and business growth">
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="container trust-row">
+    <span>Strategy</span>
+    <span>Web Development</span>
+    <span>Conversion</span>
+    <span>Paid Growth</span>
+    <span>Creative</span>
+  </div>
+</section>
+
+<section class="stats" id="results">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Built around results</div>
+      <h2>Less guesswork. More measurable growth.</h2>
+      <p>We combine creative thinking with practical digital strategy to help businesses improve how they attract, engage and convert customers.</p>
+    </div>
+
+    <div class="statgrid">
+      <div class="stat">
+        <small>Focus</small>
+        <strong>ROI</strong>
+        <p>Every recommendation starts with the business outcome.</p>
+      </div>
+      <div class="stat">
+        <small>Approach</small>
+        <strong>Data +</strong>
+        <p>Creative strategy backed by performance insights.</p>
+      </div>
+      <div class="stat">
+        <small>Goal</small>
+        <strong>Growth</strong>
+        <p>Build systems that can keep working beyond one campaign.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">What we do</div>
+      <h2>Digital solutions built to move your business forward.</h2>
+    </div>
+
+    <div class="servicegrid">
+      <article class="service">
+        <div class="icon">01</div>
+        <h3>Website & CRO</h3>
+        <p>Modern websites and conversion-focused experiences designed to turn visitors into customers.</p>
+      </article>
+      <article class="service">
+        <div class="icon">02</div>
+        <h3>Digital Marketing</h3>
+        <p>Targeted campaigns, content and growth strategies designed around your audience and goals.</p>
+      </article>
+      <article class="service">
+        <div class="icon">03</div>
+        <h3>Brand Strategy</h3>
+        <p>Clear positioning, creative direction and digital systems that make your brand easier to trust.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Selected work</div>
+      <h2>Real visual examples. Clear business purpose.</h2>
+      <p>Replace or expand these case studies as you complete client projects. No blurry placeholder images are used here.</p>
+    </div>
+
+    <div class="workgrid">
+
+      <!-- REAL IMAGE: 1000387861.jpg -->
+      <article class="project">
+        <div class="project-image">
+          <img src="1000387861.jpg" alt="Furniture ecommerce website example">
+        </div>
+        <div class="project-body">
+          <div class="project-tag">Ecommerce / UX</div>
+          <h3>Furniture Ecommerce Experience</h3>
+          <p>A clean ecommerce experience focused on product presentation, trust, navigation and conversion.</p>
+        </div>
+      </article>
+
+      <!-- REAL IMAGE: 1000387859.jpg -->
+      <article class="project">
+        <div class="project-image">
+          <img src="1000387859.jpg" alt="Business analytics and performance dashboard">
+        </div>
+        <div class="project-body">
+          <div class="project-tag">Analytics / Growth</div>
+          <h3>Performance & Growth Dashboard</h3>
+          <p>A visual example of how performance data can be used to understand campaigns, traffic and growth opportunities.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div>
+      <div class="kicker">Why Conversion Forge</div>
+      <h2>We don't just make things look good. We make them work.</h2>
+      <p>From the first click to the final conversion, we focus on the details that influence whether someone trusts your business and takes action.</p>
+
+      <div class="checks">
+        <div class="check"><b>✓</b> Conversion-focused design</div>
+        <div class="check"><b>✓</b> Clear customer journeys</div>
+        <div class="check"><b>✓</b> Data-informed decisions</div>
+        <div class="check"><b>✓</b> Practical growth strategies</div>
+      </div>
+    </div>
+
+    <div class="about-card">
+      <!-- REAL IMAGE: 1000387859.jpg -->
+      <img src="1000387859.jpg" alt="Conversion Forge digital growth workspace">
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="container">
+    <div class="ctabox">
+      <div class="kicker">Have a project in mind?</div>
+      <h2>Let's turn your next idea into something that converts.</h2>
+      <p>Tell us what you're building, what isn't working, or where you want to grow. We'll start the conversation from there.</p>
+      <a class="btn" href="https://wa.me/18052592781" target="_blank">Talk to Conversion Forge ↗</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footerrow">
+    <a class="footerlogo" href="#">
+      <img src="1000386962.jpg" alt="Conversion Forge">
+    </a>
+    <p>© 2026 Conversion Forge. All rights reserved.</p>
+    <p>Fix. Optimize. Convert.</p>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/18052592781" target="_blank" aria-label="Contact Conversion Forge on WhatsApp">◉</a>
+
+</body>
+</html>
